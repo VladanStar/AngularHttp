@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
-
+import { Geo } from 'src/app/model/geo';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,7 +11,7 @@ export class UserComponent implements OnInit {
   constructor(private userSevice: UserService) {}
 
   private user: User = {
-    id: 0,
+    id: 10,
     name: 'Junior Graham',
     username: 'Junior',
     email: 'Sincere@april.biz',
@@ -20,8 +20,13 @@ export class UserComponent implements OnInit {
       suite: 'Apt. 556',
       city: 'Gwenborough',
       zipcode: '92998-3874',
+      geo: {
+        lat: '233',
+        lng: '233',
+      },
 
     },
+
     phone: '1-770-736-8031 x56442',
     website: 'hildegard.org',
     company: {
