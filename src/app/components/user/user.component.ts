@@ -34,11 +34,12 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.onGetUsers();
     this.onGetUser();
+this.onCreateUser()
   }
 
   onGetUsers() {
     this.userSevice.getUsers().subscribe(
-      (response) => console.log(response),
+      (response) => console.table(response),
       (error) => console.log(error),
       () => console.log('Done geting users')
     );
@@ -48,6 +49,13 @@ export class UserComponent implements OnInit {
       (response) => console.log(response),
       (error) => console.log(error),
       () => console.log('Done geting users')
+    );
+  }
+  onCreateUser() {
+    this.userSevice.createUser(this.user).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error),
+      () => console.log('Done creating users')
     );
   }
 }
