@@ -35,7 +35,7 @@ export class UserComponent implements OnInit {
     this.onGetUsers();
     this.onGetUser();
 this.onCreateUser(this.user);
-this.updateUser(this.user)
+this.onUpdateUser(this.user)
   }
 
   onGetUsers() {
@@ -59,8 +59,8 @@ this.updateUser(this.user)
       () => console.log('Done creating users')
     );
   }
-  updateUser(user:User) {
-    this.userSevice.createUser(this.user).subscribe(
+  onUpdateUser(user:User) {
+    this.userSevice.updateUser(this.user).subscribe(
       (response) => console.log(response),
       (error) => console.log(error),
       () => console.log('Done creating users')
