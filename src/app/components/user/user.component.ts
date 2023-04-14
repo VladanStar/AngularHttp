@@ -37,10 +37,11 @@ export class UserComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.onGetUsers();
-    this.onGetUser();
-this.onCreateUser(this.user);
-this.onUpdateUser(this.user)
+this.onPatchUser(this.user)
+     this.onGetUsers();
+//     this.onGetUser();
+// this.onCreateUser(this.user);
+// this.onUpdateUser(this.user)
   }
 
   onGetUsers() {
@@ -68,7 +69,21 @@ this.onUpdateUser(this.user)
     this.userSevice.updateUser(this.user).subscribe(
       (response) => console.log(response),
       (error) => console.log(error),
-      () => console.log('Done creating users')
+      () => console.log('Done update users')
+    );
+  }
+  onPatchUser(user:User) {
+    this.userSevice.patchUser(this.user).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error),
+      () => console.log('Done patch users')
+    );
+  }
+  deleteUser(id:number) {
+    this.userSevice.deleteUser(id).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error),
+      () => console.log('Done Delete users')
     );
   }
 }
