@@ -1,4 +1,4 @@
 export interface Geo {
-  lat: string
-  lng: string
+  lat?: string
+  lng?: string
 }
