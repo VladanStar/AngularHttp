@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
   private apiUrl = environment.apiUrl;
-  user!: { id: 1234; name: "Richard"; gender: "M"; };
+  user!: { id: 1234; name: 'Richard'; gender: 'M' };
 
   constructor(private http: HttpClient) {}
   getUsers(): Observable<User[]> {
