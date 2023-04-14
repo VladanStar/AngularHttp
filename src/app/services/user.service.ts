@@ -11,11 +11,11 @@ private apiUrl=environment.apiUrl;
 
   constructor(private http:HttpClient) { }
 getUsers() :Observable<User[]>{
-return this.http.get<User[]>(`${this.apiUrl}`)
+return this.http.get<User[]>(`${this.apiUrl}/users`)
 
 }
 getUser() :Observable<User>{
-  return this.http.get<User>(`${this.apiUrl}/1`)
+  return this.http.get<User>(`${this.apiUrl}/users/1`)
 
   }
 }
