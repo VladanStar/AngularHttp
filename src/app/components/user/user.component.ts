@@ -3,13 +3,17 @@ import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
 import { Geo } from 'src/app/model/geo';
 import { HttpEventType } from '@angular/common/http';
+import { Event } from '@angular/router';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
+  fileStatus: any;
+
   constructor(private userSevice: UserService) {}
+
 
   private user: User = {
     id: 10,
@@ -86,8 +90,10 @@ export class UserComponent implements OnInit {
       () => console.log('Done Delete users')
     );
   }
-  onUploadFile(files: File[]): void {
+  onUploadFile(files: any): void {
     console.log(files);
+
+
     const formData = new FormData();
     for (const file of files) {
       formData.append('files', file, file.name);
