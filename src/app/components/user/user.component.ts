@@ -86,4 +86,13 @@ this.onPatchUser(this.user)
       () => console.log('Done Delete users')
     );
   }
+  onUploadFile(files:File[]) {
+console.log(files);
+const formData= new FormData()
+    this.userSevice.deleteUser(5).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error),
+      () => console.log('Done Delete users')
+    );
+  }
 }
